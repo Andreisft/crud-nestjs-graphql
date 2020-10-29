@@ -1,0 +1,35 @@
+type Pokemon {
+  id: Int!
+  name: String!
+  weight: Int!
+  types: [PokemonType!]!
+}
+
+type PokemonType {
+  slot: Int!
+  type: NamedApiResource!
+}
+
+type NamedApiResource {
+  name: String!
+  url: String!
+}
+
+type Mutation {
+  createPokemon(createPokemonInput: CreatePokemonInput): Pokemon!
+  deletePokemon(id: Int!): Pokemon!
+}
+
+type Query {
+  pokemons: [Pokemon!]!
+  pokemon: Pokemon!
+}
+
+input CreatePokemonInput {
+  name: String!
+}
+
+input UpdatePokemonInput {
+  coachId: Int!
+  name: String!
+}

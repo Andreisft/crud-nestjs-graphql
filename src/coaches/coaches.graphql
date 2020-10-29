@@ -1,0 +1,36 @@
+type Coach {
+  id: ID!
+  username: String!
+  pokemons: [Pokemon!]
+}
+
+type Query {
+  coaches: [Coach!]!
+  coach: Coach!
+  currentCoach: Coach!
+}
+
+type LoginPayload {
+  token: String!
+  coach: Coach!
+}
+
+type Mutation {
+  login(username: String!, password: String!): LoginPayload!
+  createCoach(createCoachInput: CreateCoachInput!): Coach!
+  updateCoach(updateCoachInput: UpdateCoachInput!): Coach!
+  deleteCoach(id: Int!): Coach!
+  deletePokemonCoach(pokemonId: Int!): Coach!
+  createPokemonCoach(createPokemonInput: CreatePokemonInput!): Coach!
+}
+
+input CreateCoachInput {
+  username: String!
+  password: String!
+}
+
+input UpdateCoachInput {
+  id: Int!
+  username: String
+  password: String
+}
