@@ -123,8 +123,6 @@ export class PokemonsService {
       const coachId = currentCoach.id;
       const pokemon = await this.findOne(id, coachId);
 
-      console.log(pokemon);
-
       if (!pokemon)
         throw new BadRequestException(
           "It was not possible to find an pokemon with this information"
@@ -166,7 +164,7 @@ export class PokemonsService {
     return this.connection
       .getRepository(Pokemon)
       .createQueryBuilder("pokemon")
-      .leftJoin("pokemon.coach", "coach")
+      .leftJoin("pokemon.coaches", "coach")
       .where("coach.id = :coachId", { coachId })
       .getMany();
   }

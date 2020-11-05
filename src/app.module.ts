@@ -15,7 +15,7 @@ import { AuthGuard } from './common/guards/auth.guard';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: 'development.env',
+      envFilePath: `${process.env.NODE_ENV || 'development'}.env`,
     }),
     GraphQLModule.forRoot({
       playground: true,

@@ -60,6 +60,19 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Enviroments
+
+```bash
+DB_HOST=
+DB_USER=
+DB_PASSWORD=
+DB_DATABASE=
+
+POKEMON_API_URL=https://pokeapi.co/api/v2/pokemon
+
+SECRET_KEY=
+```
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
